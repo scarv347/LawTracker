@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
+    "dev:server": "node server/index.ts",
     "preview": "vite preview"
   },
   "dependencies": {

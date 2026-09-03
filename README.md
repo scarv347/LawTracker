@@ -72,4 +72,19 @@ export default defineConfig([
   },
 ])
 
+## Ask LawTrack AI (local dev)
+
+Ask LawTrack AI is a grounded legal-information chatbot that answers only from verified LawTrack legal records. With no legal data connected yet, it correctly returns the "insufficient evidence" response.
+
+To run locally:
+
+1. Start the Vite dev server: `npm run dev`
+2. In another terminal, start the AI server: `npm run dev:server` (listens on port 5175; Vite proxies `/api` to it)
+
+Configure the server by copying `server/.env.example` to `server/.env` and setting `ASU_AIR_API_KEY` and `ASU_AIR_MODEL`. The API key is server-side only and must never be committed or placed in frontend code; `.env` is gitignored. The base URL defaults to `https://openai.rc.asu.edu/v1`.
+
+The backend lives in `server/`, the frontend client in `src/lib/askLawTrack.ts`, and the full endpoint contract is documented in [docs/ask-lawtrack-api.md](docs/ask-lawtrack-api.md).
+
+To connect real legal data, implement the `LegalEvidenceRetriever` interface in `server/retrieval/retriever.ts`. The Firestore-backed implementation swaps in at the one-line swap point without changing the API contract, prompt, or validation.
+
 ```
