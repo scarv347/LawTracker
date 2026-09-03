@@ -6,9 +6,10 @@ interface ChatComposerProps {
   value: string;
   onChange: (v: string) => void;
   onSend: () => void;
+  className?: string;
 }
 
-export const ChatComposer = ({ value, onChange, onSend }: ChatComposerProps) => {
+export const ChatComposer = ({ value, onChange, onSend, className = '' }: ChatComposerProps) => {
   const disabled = !value.trim();
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Enter' && !e.shiftKey) {
@@ -17,7 +18,7 @@ export const ChatComposer = ({ value, onChange, onSend }: ChatComposerProps) => 
     }
   };
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${className}`}>
       <textarea
         className={styles.input}
         placeholder="Ask about laws relevant to your life events and jurisdiction"

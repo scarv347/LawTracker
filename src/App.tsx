@@ -8,10 +8,30 @@ import { MyLawsPage } from './pages/MyLawsPage';
 import { AskLawTrackPage } from './pages/AskLawTrackPage';
 import { CourtDatesPage } from './pages/CourtDatesPage';
 import { CasesPage } from './pages/CasesPage';
+import { LandingPage } from './pages/LandingPage';
+import { IncognitoPage } from './pages/IncognitoPage';
 import styles from './App.module.css';
 
 function App() {
+  const [view, setView] = useState<'landing' | 'incognito' | 'workspace'>('landing');
+  const [transitioning, setTransitioning] = useState(false);
   const [page, setPage] = useState<PageId>('dashboard');
+
+  const switchView = (nextView: 'landing' | 'incognito' | 'workspace') => {
+    setTransitioning(true);
+    window.setTimeout(() => {
+      setView(nextView);
+      setTransitioning(false);
+    }, 180);
+  };
+
+  if (view === 'landing') {
+    return <div className={transitioning ? styles.pageLeaving : styles.pageEntering}><LandingPage onGetStarted={() => switchView('workspace')} onIncognito={() => switchView('incognito')} /></div>;
+  }
+
+  if (view === 'incognito') {
+    return <div className={transitioning ? styles.pageLeaving : styles.pageEntering}><IncognitoPage onExit={() => switchView('landing')} /></div>;
+  }
 
   const renderPage = () => {
     switch (page) {
