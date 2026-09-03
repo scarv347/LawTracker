@@ -9,7 +9,7 @@
   border:1px solid transparent;
 }
 .neutral{
-  background:#F1F5F9;
+  background:var(--color-bg);
   color:var(--color-slate-500);
   border-color:var(--color-border);
 }

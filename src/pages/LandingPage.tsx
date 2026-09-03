@@ -3,11 +3,11 @@ import { Calendar, MessageCircle, Scale, Sparkle } from '../components/ui/Icons'
 import styles from './LandingPage.module.css';
 
 interface LandingPageProps {
-  onGetStarted: () => void;
+  onAuth: () => void;
   onIncognito: () => void;
 }
 
-export const LandingPage = ({ onGetStarted, onIncognito }: LandingPageProps) => {
+export const LandingPage = ({ onAuth, onIncognito }: LandingPageProps) => {
   const pageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ export const LandingPage = ({ onGetStarted, onIncognito }: LandingPageProps) => 
         <div className={styles.headerActions}>
           <span className={styles.headerNote}>A clearer way to know your rights</span>
           <button className={styles.incognitoButton} type="button" onClick={onIncognito}><Sparkle /> Try incognito</button>
-          <button className={styles.signIn} type="button" onClick={onGetStarted}>Open workspace</button>
+          <button className={styles.signIn} type="button" onClick={onAuth}>Sign up / log in</button>
         </div>
       </header>
 
@@ -47,7 +47,7 @@ export const LandingPage = ({ onGetStarted, onIncognito }: LandingPageProps) => 
             <h1>Know what<br /><em>applies to you.</em></h1>
             <p className={styles.intro}>LawTrack helps you understand legal questions, spot what changes when life changes, and keep up with laws that affect you.</p>
             <div className={styles.heroActions}>
-              <button className={styles.primaryButton} type="button" onClick={onGetStarted}>Explore LawTrack <span aria-hidden="true">-&gt;</span></button>
+              <button className={styles.primaryButton} type="button" onClick={onAuth}>Sign up to explore <span aria-hidden="true">-&gt;</span></button>
               <span className={styles.noAdvice}>General information only<br />Never legal advice</span>
             </div>
           </div>
@@ -81,7 +81,7 @@ export const LandingPage = ({ onGetStarted, onIncognito }: LandingPageProps) => 
             <div>
               <h2>Big life moments<br /><em>change the picture.</em></h2>
               <p className={styles.sectionText}>Tell LawTrack what is happening in your life and it helps surface the legal information worth paying attention to next.</p>
-              <button className={styles.textButton} type="button" onClick={onGetStarted}>Build your personal view <span aria-hidden="true">-&gt;</span></button>
+              <button className={styles.textButton} type="button" onClick={onAuth}>Build your personal view <span aria-hidden="true">-&gt;</span></button>
             </div>
             <div className={styles.timeline}>
               <div className={styles.timelineItem}><span className={styles.timelineMarker}>01</span><div><strong>Turning 21</strong><p>Check age-based rules and responsibilities in your jurisdiction.</p></div><span className={styles.timelineTag}>LIFE EVENT</span></div>
@@ -112,7 +112,7 @@ export const LandingPage = ({ onGetStarted, onIncognito }: LandingPageProps) => 
         <section className={`${styles.finalCta} ${styles.reveal}`} data-reveal>
           <p className={styles.kicker}><span className={styles.kickerDot} /> Start with what matters to you</p>
           <h2>Make the law<br /><em>easier to follow.</em></h2>
-          <button className={styles.primaryButton} type="button" onClick={onGetStarted}>Open your workspace <span aria-hidden="true">-&gt;</span></button>
+          <button className={styles.primaryButton} type="button" onClick={onAuth}>Create your account <span aria-hidden="true">-&gt;</span></button>
           <p className={styles.disclaimer}>LawTrack provides general legal information for educational purposes only. It does not constitute legal advice or create an attorney-client relationship.</p>
         </section>
       </main>

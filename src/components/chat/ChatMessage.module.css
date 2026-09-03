@@ -27,7 +27,7 @@
   font-size:12px;
   color:var(--color-text-muted);
   border:1px dashed var(--color-slate-300);
-  background:#F8FAFC;
+  background:var(--color-bg);
   padding:var(--space-3);
   border-radius:var(--radius-sm);
 }

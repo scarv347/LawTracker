@@ -26,13 +26,13 @@
   color:var(--color-text);
   border-color:var(--color-border);
 }
-.secondary:hover{ background:#F1F5F9; }
+.secondary:hover{ background:var(--color-bg); }
 
 .ghost{
   background:transparent;
   color:var(--color-text-muted);
   border-color:transparent;
 }
-.ghost:hover{ background:#F1F5F9; }
+.ghost:hover{ background:var(--color-bg); }
 
 .btn:disabled{ opacity:.5; cursor:not-allowed; }

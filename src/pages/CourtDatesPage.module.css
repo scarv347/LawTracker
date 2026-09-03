@@ -1,9 +1,9 @@
 .page{ display:flex; flex-direction:column; gap:var(--space-6); }
 .headerRow{ display:flex; justify-content:space-between; align-items:flex-start; gap:var(--space-4); flex-wrap:wrap; }
 .notice{
-  background:#FEF3C7;
-  border:1px solid #FDE68A;
-  color:#92400E;
+  background:var(--color-accent-muted);
+  border:1px solid var(--color-accent);
+  color:var(--color-navy);
   padding:var(--space-3) var(--space-4);
   border-radius:var(--radius-md);
   font-size:14px;

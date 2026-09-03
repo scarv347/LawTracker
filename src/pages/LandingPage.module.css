@@ -21,3 +21,30 @@ h1{margin:0;color:#173b3b;font-family:Georgia,serif;font-size:clamp(56px,7vw,100
 @media (prefers-reduced-motion:reduce){.page:before,.heroCopy,.heroVisual,.document,.paperShadow,.kickerDot{animation:none}.feature,.timelineItem,.feedItem{transition:none}.timelineItem:hover,.feedItem:hover,.feature:hover{transform:none;padding-left:0}}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}.reveal.revealed{opacity:1;transform:translateY(0)}.features.revealed .feature:nth-child(2){transition-delay:.08s}.features.revealed .feature:nth-child(3){transition-delay:.16s}.features.revealed .feature:nth-child(4){transition-delay:.24s}.storySection.revealed .timelineItem:nth-child(1){animation:landingRise .55s .08s both}.storySection.revealed .timelineItem:nth-child(2){animation:landingRise .55s .18s both}.storySection.revealed .timelineItem:nth-child(3){animation:landingRise .55s .28s both}.feedSection.revealed .feedItem:nth-child(1){animation:landingRise .55s .08s both}.feedSection.revealed .feedItem:nth-child(2){animation:landingRise .55s .18s both}.feedSection.revealed .feedItem:nth-child(3){animation:landingRise .55s .28s both}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.storySection.revealed .timelineItem,.feedSection.revealed .feedItem{animation:none}}
+
+.page{color:var(--color-text);background:var(--color-bg)}
+.header{border-bottom-color:var(--color-border)}
+.brand,.signIn,h1,.document h2,.floatingDate,.timelineItem strong,.feedItem h3,.assistantCopy,.chatQuestion,.chatAnswer strong{color:var(--color-navy)}
+.headerNote,.intro,.sectionText,.feedHeading .sectionText{color:var(--color-slate)}
+.logo,.floatingSpark,.assistantIcon{color:var(--color-bg);background:var(--color-accent)}
+.signIn,.kicker,.kickerDot,h1 em,.documentEyebrow,.documentStat strong,.featureIntro,.featureIcon,.floatingDate svg,.timelineMarker,.timelineTag,.feedNumber,.feedMeta,.feedArrow,.sourcePill{color:var(--color-accent)}
+.kickerDot{background:var(--color-accent)}
+.incognitoButton,.primaryButton{color:var(--color-bg);background:var(--color-navy);border-color:var(--color-navy)}
+.incognitoButton:hover,.primaryButton:hover{background:var(--color-accent);border-color:var(--color-accent)}
+.document,.assistantCard{background:var(--color-card)}
+.paperShadow{background:var(--color-border)}
+.documentRule,.documentStat,.chatAnswer{border-color:var(--color-border)}
+.documentTop,.documentFooter{color:var(--color-slate)}
+.documentBody,.feature p,.timelineItem p,.feedItem p,.assistantCard .assistantTop,.chatAnswer p{color:var(--color-slate)}
+.floatingDate{background:var(--color-accent-muted)}
+.storySection{color:var(--color-bg);background:var(--color-navy)}
+.storySection h2 em,.assistantSection h2 em,.feedSection h2 em,.finalCta h2 em{color:var(--color-accent)}
+.textButton{color:var(--color-bg);border-bottom-color:var(--color-accent)}
+.timeline,.timelineItem,.feedList,.feedItem{border-color:var(--color-border)}
+.assistantSection{background:var(--color-accent-muted)}
+.feedSection{background:var(--color-bg)}
+.finalCta{color:var(--color-bg);background:var(--color-accent)}
+.finalCta .primaryButton{color:var(--color-navy);background:var(--color-bg)}
+.finalCta .primaryButton:hover{color:var(--color-bg);background:var(--color-navy)}
+.disclaimer{color:var(--color-bg)}
+.footer{background:var(--color-navy);color:var(--color-bg)}

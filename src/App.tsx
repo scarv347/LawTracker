@@ -10,14 +10,15 @@ import { CourtDatesPage } from './pages/CourtDatesPage';
 import { CasesPage } from './pages/CasesPage';
 import { LandingPage } from './pages/LandingPage';
 import { IncognitoPage } from './pages/IncognitoPage';
+import { AuthPage } from './pages/AuthPage';
 import styles from './App.module.css';
 
 function App() {
-  const [view, setView] = useState<'landing' | 'incognito' | 'workspace'>('landing');
+  const [view, setView] = useState<'landing' | 'incognito' | 'auth' | 'workspace'>('landing');
   const [transitioning, setTransitioning] = useState(false);
   const [page, setPage] = useState<PageId>('dashboard');
 
-  const switchView = (nextView: 'landing' | 'incognito' | 'workspace') => {
+  const switchView = (nextView: 'landing' | 'incognito' | 'auth' | 'workspace') => {
     setTransitioning(true);
     window.setTimeout(() => {
       setView(nextView);
@@ -26,11 +27,15 @@ function App() {
   };
 
   if (view === 'landing') {
-    return <div className={transitioning ? styles.pageLeaving : styles.pageEntering}><LandingPage onGetStarted={() => switchView('workspace')} onIncognito={() => switchView('incognito')} /></div>;
+    return <div className={transitioning ? styles.pageLeaving : styles.pageEntering}><LandingPage onAuth={() => switchView('auth')} onIncognito={() => switchView('incognito')} /></div>;
   }
 
   if (view === 'incognito') {
     return <div className={transitioning ? styles.pageLeaving : styles.pageEntering}><IncognitoPage onExit={() => switchView('landing')} /></div>;
+  }
+
+  if (view === 'auth') {
+    return <div className={transitioning ? styles.pageLeaving : styles.pageEntering}><AuthPage onBack={() => switchView('landing')} onAuthenticated={() => switchView('workspace')} /></div>;
   }
 
   const renderPage = () => {
