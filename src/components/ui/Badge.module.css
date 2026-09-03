@@ -1,0 +1,25 @@
+.badge{
+  display:inline-flex;
+  align-items:center;
+  padding:2px 8px;
+  border-radius:999px;
+  font-size:12px;
+  line-height:1;
+  font-weight:500;
+  border:1px solid transparent;
+}
+.neutral{
+  background:#F1F5F9;
+  color:var(--color-slate-500);
+  border-color:var(--color-border);
+}
+.accent{
+  background:var(--color-accent-muted);
+  color:var(--color-accent);
+  border-color:rgba(37,99,235,.3);
+}
+.demo{
+  background:transparent;
+  color:var(--color-text-muted);
+  border:1px dashed var(--color-slate-300);
+}
