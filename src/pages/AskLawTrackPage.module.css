@@ -1,0 +1,31 @@
+.page{
+  display:flex;
+  flex-direction:column;
+  height:calc(100vh - var(--space-8));
+  max-height:100%;
+}
+@media (max-width:767px){
+  .page{
+    height:calc(100vh - var(--bottom-nav-height) - env(safe-area-inset-bottom));
+  }
+}
+.header{
+  padding:var(--space-4) 0;
+}
+.title{ margin:0; font-size:24px; }
+.chatArea{
+  flex:1;
+  overflow-y:auto;
+  padding:var(--space-4) 0;
+}
+.messages{ display:flex; flex-direction:column; }
+.disclaimer{
+  position:sticky;
+  bottom:0;
+  background:var(--color-navy);
+  color:white;
+  text-align:center;
+  font-size:12px;
+  padding:var(--space-3);
+  border-top:1px solid rgba(255,255,255,.1);
+}

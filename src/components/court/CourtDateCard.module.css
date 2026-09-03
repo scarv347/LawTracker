@@ -1,0 +1,5 @@
+.card{ position:relative; }
+.demo{ position:absolute; top:var(--space-3); right:var(--space-3); }
+.title{ font-size:17px; margin:0 0 var(--space-2); }
+.meta{ display:grid; gap:4px; font-size:13px; color:var(--color-text-muted); margin-bottom:var(--space-3); }
+.desc{ margin:0; font-size:14px; }

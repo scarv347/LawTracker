@@ -1,0 +1,25 @@
+.page{ display:flex; flex-direction:column; gap:var(--space-6); }
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:var(--space-4);
+}
+.gridSingle{ display:grid; gap:var(--space-4); }
+.compact{ position:relative; }
+.demo{ position:absolute; top:var(--space-3); right:var(--space-3); }
+.cardTitle{ font-size:16px; margin:0 0 var(--space-2); }
+.cardText{ font-size:14px; color:var(--color-text-muted); margin:0 0 var(--space-3); }
+.eventHeader{ display:flex; align-items:center; gap:var(--space-2); margin-bottom:var(--space-2); }
+.icon{ color:var(--color-accent); display:inline-flex; }
+.comingSoon{ align-self:flex-start; }
+.promo{
+}
+.promoInner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:var(--space-5);
+  flex-wrap:wrap;
+}
+.promoTitle{ margin:0 0 var(--space-1); font-size:18px; }
+.promoText{ margin:0; color:var(--color-text-muted); font-size:14px; }
