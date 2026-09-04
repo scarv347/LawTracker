@@ -1,0 +1,33 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ---- Private user data: strictly self-only access ----
+    function isSelf(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+
+    match /users/{uid} {
+      allow get: if isSelf(uid);
+      allow create, update: if isSelf(uid);
+      // delete intentionally omitted for MVP
+
+      match /chatSessions/{sessionId} {
+        allow get, list, create, update: if isSelf(uid);
+
+        match /messages/{messageId} {
+          allow get, list, create, update: if isSelf(uid);
+        }
+      }
+    }
+
+    // ---- Legal source data: NO client access ----
+    // laws/, jurisdictions/, and jurisdictionCoverage/ intentionally have
+    // NO match blocks: default deny. Arbitrary Firebase clients can neither
+    // read nor write them (including draft/unverified law records).
+    // The application reads them exclusively through the trusted backend
+    // (Firebase Cloud Function / local dev server) via the Admin SDK, which
+    // is not subject to these rules.
+  }
+}
